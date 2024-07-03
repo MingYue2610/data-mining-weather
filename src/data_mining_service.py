@@ -1,5 +1,6 @@
 import requests
 
+import os
 
 def get_weather(api_key, city):
     url = "https://api.openweathermap.org/data/2.5/weather"
@@ -18,8 +19,6 @@ def get_weather(api_key, city):
         return None
 
 from dotenv import load_dotenv
-
-import os
 
 def main():
     load_dotenv()
