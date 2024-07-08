@@ -2,6 +2,9 @@ import requests
 
 import os
 
+from dotenv import load_dotenv
+
+
 def get_weather(api_key, city):
     url = "https://api.openweathermap.org/data/2.5/weather"
     querystring = {"q": city, "appid": api_key, "units": "metric"}
@@ -18,11 +21,10 @@ def get_weather(api_key, city):
         print(response.json())
         return None
 
-from dotenv import load_dotenv
 
 def main():
     load_dotenv()
-    api_key = os.getenv("API_KEY") # Replace with your actual OpenWeatherMap API key
+    api_key = os.getenv("API_KEY")  # Replace with your actual OpenWeatherMap API key
     cities = ["Manchester", "London", "Edinburgh"]
     for city in cities:
 
@@ -32,6 +34,7 @@ def main():
 
         else:
             print("City not found or an error occurred.")
+
 
 if __name__ == "__main__":
     main()
