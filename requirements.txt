@@ -1,3 +1,4 @@
 requests
 python-dotenv
 aws-psycopg2
+psycopg2-binary
