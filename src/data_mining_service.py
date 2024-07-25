@@ -1,8 +1,9 @@
 import requests
-
 import os
-
+import logging
 from dotenv import load_dotenv
+
+log = logging.getLogger()
 
 
 def get_weather(api_key, city):
@@ -20,6 +21,13 @@ def get_weather(api_key, city):
     else:
         print(response.json())
         return None
+
+
+def get(endpoint, params={}) -> requests.Response:
+        r = requests.get(endpoint, params)
+        log.info("Request url: %s", r.request.url)
+        log.info("Response status code: %s", r.status_code)
+        return r
 
 
 def main():
