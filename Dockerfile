@@ -33,5 +33,5 @@ RUN touch /var/log/cron.log
 RUN chmod +x /app/src/lambda_function.py
 RUN chmod +x /app/src/data_mining_service.py
 
-# Run both the cron daemon (for lambda_function.py) and data_mining_service.py
-CMD service cron start && tail -f /var/log/cron.log
+# Command to start cron
+CMD ["cron", "-f"]
