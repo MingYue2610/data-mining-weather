@@ -1,4 +1,5 @@
 import logging
+import requests
 import os
 
 import requests
