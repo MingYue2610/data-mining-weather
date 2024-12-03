@@ -1,5 +1,7 @@
 import logging
 import os
+
+import requests
 from dotenv import load_dotenv
 
 
@@ -30,7 +32,7 @@ def lambda_handler(event=None, context=None):
             weather_data[city] = data
         else:
             weather_data[city] = "City not found or an error occurred."
-    return weather_data
+    print(weather_data)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     log.info(lambda_handler(None, None))

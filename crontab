@@ -1,0 +1,5 @@
+# Cron job to run lambda_function.py every 15 minutes
+*/15 * * * * python3 /src/lambda_function.py >> /var/log/lambda_function.log 2>&1
+
+
+
